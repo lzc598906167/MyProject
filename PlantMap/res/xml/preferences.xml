@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout="@layout/preference_item" >
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/basic_settings" >
+        <CheckBoxPreference
+            android:title="@string/keep_screen_on"
+            android:key="keep_screen_on"
+            android:layout="@layout/preference_item"
+            android:summary="@string/keep_screen_on_hint" />
+        <Preference
+            android:title="@string/clean_cache"
+            android:key="clear_data"
+            android:layout="@layout/preference_item"
+            android:summary="@string/clean_cache_hint" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/other_info" >
+        <Preference
+            android:title="@string/current_version_title"
+            android:key="current_version"
+            android:layout="@layout/preference_item"
+            android:summary=" " />
+        <Preference
+            android:title="@string/about"
+            android:key="about"
+            android:layout="@layout/preference_item" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

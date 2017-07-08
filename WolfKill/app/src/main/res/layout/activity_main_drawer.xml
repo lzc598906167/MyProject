@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:paddingRight="30dp"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_drawer_wolfkill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/ic_wolf" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:text="@string/drawer_wolfkill"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorGreyDrawer" />
+    <LinearLayout
+        android:id="@+id/main_drawer_myfriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/ic_icon_myfriend" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:text="@string/drawer_myfriend"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorGreyDrawer" />
+    <LinearLayout
+        android:id="@+id/main_drawer_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/ic_icon_ranking" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:text="@string/drawer_ranking"
+            />
+
+        <ImageView
+
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="left"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorGreyDrawer" />
+    <LinearLayout
+        android:id="@+id/main_drawer_loingout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/ic_icon_setting" />
+
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:text="@string/drawer_loingout"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="left"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorGreyDrawer" />
+</LinearLayout>

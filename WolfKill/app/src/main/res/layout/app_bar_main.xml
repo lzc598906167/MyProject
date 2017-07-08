@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nwsuaf.werewolf.main.view.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="148dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/toolbar_padding_top"
+            android:weightSum="1"/>
+
+        <ImageView
+            android:id="@+id/bar_iv_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/color_head" />
+
+        <ImageView
+            android:id="@+id/bar_iv_cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:src="@mipmap/cloud" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@mipmap/moon" />
+
+        <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+            android:id="@+id/main_civ"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="33dp"
+            android:src="@mipmap/a" />
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="34dp"
+            android:src="@mipmap/werewolf" />
+    </FrameLayout>
+
+
+    <include layout="@layout/content_main" />
+
+
+</LinearLayout>

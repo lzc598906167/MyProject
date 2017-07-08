@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="statusbar_bg">#32CD32</color>
+    <color name="white">#ffffffff</color>
+    <color name="grey">#ff666666</color>
+    <color name="yellow">#7CFC00</color>
+    <color name="light_yellow">#ADFF2F</color>
+    <color name="black">#000000</color>
+    <color name="light_green">#F0FFF0</color>
+    <color name="light_grey">#F5F5F5</color>
+    <color name="dark_white">#DCDCDC</color>
+    <color name="scrollbar">#C0C0C0</color>
+    <color name="pure_yellow">#FFFFE0</color>
+    <color name="light_pure_yellow">#FFFFF0</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="green">#1EB41E</color>
+
+</resources>

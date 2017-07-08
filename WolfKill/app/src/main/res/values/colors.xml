@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b0b6ff</color>
+    <color name="colorPrimaryDark">#2E304A</color>
+    <color name="colorPrimaryBrighten">#4f537d</color>
+    <color name="colorBlack">#0A0B15</color>
+    <color name="colorText">#FFF69B</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGreyDrawer">#BBBBBB</color>
+    <color name="headStart">#2b2a4a</color>
+    <color name="headEnd">#4f537d</color>
+    <color name="simpleEnd">#4f537d</color>
+    <color name="simpleStart">#9196d9</color>
+    <color name="hardEnd">#5b3e6f</color>
+    <color name="hardStart">#a382c0</color>
+    <color name="tvSimple">#fff69b</color>
+    <color name="tvSimpleTip">#b0b6ff</color>
+    <color name="tvHard">#ffe095</color>
+    <color name="tvHardTip">#c594ee</color>
+    <color name="color_blue_3a9efb">#3a9efb</color>
+    <color name="transplant">#00000000</color>
+    <color name="yellow">#FFD700</color>
+</resources>

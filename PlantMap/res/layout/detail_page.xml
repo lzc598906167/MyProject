@@ -1,0 +1,394 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/title_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/dark_white"
+        android:contentDescription="@string/app_name" />
+
+    <com.nwsuaf.plantcontrol.ObservableScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/title_image"
+        android:clipChildren="false"
+        android:clipToPadding="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:orientation="vertical" >
+                    
+                    <LinearLayout
+                        android:id="@+id/detail_btn_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="25dp"
+                        android:orientation="horizontal" >
+                        
+                        <Button
+                        	android:id="@+id/nearby_button"
+                        	android:layout_width="wrap_content"
+                        	android:layout_height="30dp"
+                        	android:layout_marginStart="5dp"
+                        	android:layout_marginEnd="5dp"
+                        	style="?android:attr/buttonBarButtonStyle"
+                        	android:background="@drawable/detail_btn_style"
+                        	android:textColor="@color/grey"
+                        	android:text="@string/nearby" />
+                        
+                        <Button
+                        	android:id="@+id/navigation_btn"
+                        	android:layout_width="wrap_content"
+                        	android:layout_height="30dp"
+                        	android:layout_marginStart="5dp"
+                        	android:layout_marginEnd="5dp"
+                        	style="?android:attr/buttonBarButtonStyle"
+                        	android:background="@drawable/detail_btn_style"
+                        	android:textColor="@color/grey"
+                        	android:text="@string/navigation" />
+                        
+                    </LinearLayout>
+                    
+                    <TextView
+                        android:id="@+id/plant_familyGenusName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_above="@id/detail_btn_bar"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                    
+                    <TextView
+                        android:id="@+id/plant_latname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_above="@id/plant_familyGenusName"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic"
+                        android:typeface="serif" />
+                    
+                    <TextView
+                        android:id="@+id/plant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_above="@id/plant_latname"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:background="@color/light_pure_yellow" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/light_green"
+                    android:orientation="vertical"
+                    android:padding="10dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="3dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="6dp"
+                            android:paddingStart="0dp"
+                            android:text="@string/aliaseName_title"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/plant_aliaseName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:lineSpacingExtra="2dp"
+                            android:longClickable="true"
+                            android:textColor="@color/grey"
+                            android:textIsSelectable="true"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="3dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="6dp"
+                            android:paddingStart="0dp"
+                            android:text="@string/distribution_title"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/plant_distribution"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:lineSpacingExtra="2dp"
+                            android:longClickable="true"
+                            android:textColor="@color/grey"
+                            android:textIsSelectable="true"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/exterion_title"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@color/green" />
+
+                <LinearLayout
+                    android:id="@+id/exterion_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/plant_exterion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:lineSpacingExtra="5dp"
+                    android:longClickable="true"
+                    android:paddingTop="5dp"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/flower_title"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@color/green" />
+
+                <LinearLayout
+                    android:id="@+id/flower_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/plant_flower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:lineSpacingExtra="5dp"
+                    android:longClickable="true"
+                    android:paddingTop="5dp"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/branch_title"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@color/green" />
+
+                <LinearLayout
+                    android:id="@+id/branch_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/plant_branch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:lineSpacingExtra="5dp"
+                    android:longClickable="true"
+                    android:paddingTop="5dp"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/leaf_title"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@color/green" />
+
+                <LinearLayout
+                    android:id="@+id/leaf_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/plant_leaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:lineSpacingExtra="5dp"
+                    android:longClickable="true"
+                    android:paddingTop="5dp"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/fruit_title"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:background="@color/green" />
+
+                <LinearLayout
+                    android:id="@+id/fruit_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/plant_fruit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:lineSpacingExtra="5dp"
+                    android:longClickable="true"
+                    android:paddingTop="5dp"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/database_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="40dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.nwsuaf.plantcontrol.ObservableScrollView>
+
+    <RelativeLayout
+        android:id="@+id/detail_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignTop="@id/scrollView1"
+        android:background="@color/statusbar_bg" >
+
+        <RelativeLayout
+            android:id="@+id/detail_title_btn_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/detail_back_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/back_button_style" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/detail_title_btn_bar"
+            android:gravity="center_vertical"
+            android:text="@string/detail_title"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nwsuaf.werewolf.main.view.MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/main_ll_simple"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/shape_simple"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivv_hard_wolf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:src="@mipmap/wolf_blue" />
+
+            <TextView
+                android:id="@+id/tvv_tv_simple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/ivv_hard_wolf"
+                android:text="普通"
+                android:textColor="@color/tvSimple"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tvv_tv_simple"
+                android:layout_below="@+id/tvv_tv_simple"
+                android:layout_marginTop="2dp"
+                android:text="9人局"
+                android:textColor="@color/tvSimple"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvv_tv_simple"
+                android:layout_toEndOf="@+id/tvv_tv_simple"
+                android:paddingBottom="2dp"
+                android:text="模式"
+                android:textColor="@color/tvSimple"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_iv_ic"
+                android:layout_toStartOf="@+id/iv_iv_ic"
+                android:text="快速匹配"
+                android:textColor="@color/tvSimpleTip"
+                android:paddingRight="5dp"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_iv_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@mipmap/rightward_blue" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/main_ll_hard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@drawable/shape_hard"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_hard_wolf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:src="@mipmap/wolf_purple" />
+
+            <TextView
+                android:id="@+id/tv_tv_simple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/iv_hard_wolf"
+                android:text="进阶"
+                android:textColor="@color/tvHard"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/tv_tv_nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_tv_simple"
+                android:layout_below="@+id/tv_tv_simple"
+                android:layout_marginTop="2dp"
+                android:text="12人局"
+                android:textColor="@color/tvHard"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_tv_patter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="模式"
+                android:textColor="@color/tvHard"
+                android:textSize="13sp"
+                android:layout_alignBottom="@+id/tv_tv_simple"
+                android:layout_toEndOf="@+id/tv_tv_simple"
+                android:paddingBottom="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快速匹配"
+                android:textColor="@color/tvHardTip"
+                android:textSize="16sp"
+                android:paddingRight="5dp"
+                android:layout_alignTop="@+id/iv_jiantou"
+                android:layout_toStartOf="@+id/iv_jiantou" />
+
+            <ImageView
+                android:id="@+id/iv_jiantou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/rightward_purple"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/main_ll_create"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_bottom">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryBrighten"
+                android:text="创建房间" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/main_ll_find"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape_bottom">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryBrighten"
+                android:text="搜索房间" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_ll_rule"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/shape_bottom"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryBrighten"
+                android:text="游戏规则" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg2"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

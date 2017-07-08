@@ -1,0 +1,15 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/statusbar_bg</item>
+        <item name="android:colorPrimaryDark">@color/statusbar_bg</item>
+        <item name="android:colorAccent">@color/statusbar_bg</item>
+    </style>
+    
+    <style name="AppFullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorPrimary">@color/statusbar_bg</item>
+        <item name="android:colorPrimaryDark">@color/statusbar_bg</item>
+        <item name="android:colorAccent">@color/statusbar_bg</item>
+    </style>
+</resources>

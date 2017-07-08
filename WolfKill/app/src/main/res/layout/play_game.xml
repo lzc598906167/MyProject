@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/play_game_main"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/play_game_llayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/play_game_llayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/game_tv_info"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/play_game_whospeak"
+            android:textColor="#101010"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginTop="65dp"/>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:id="@+id/avView_father"
+                android:layout_height="250dp">
+                <com.netease.nimlib.sdk.avchat.model.AVChatVideoRender
+                    android:id="@+id/play_game_avView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/game_tv_identity1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="您的身份是："
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/game_tv_identity2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"
+            android:text="TextView" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:background="#29b6f6"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/play_game_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/play_game_title"
+            android:textColor="@android:color/white"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/play_game_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/play_game_time"
+            android:textColor="#ff5722"
+            android:textSize="29dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="85dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/game_rl_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="1"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv1"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="2"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv2"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="3"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv3"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="4"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv4"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="5"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv5"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="9dp"
+                android:text="6"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv6"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="85dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/game_rl_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="9dp"
+                android:text="7"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv7"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="9dp"
+                android:text="8"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv8"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="9dp"
+                android:text="9"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/play_game_cv9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onHivClick"
+                android:src="@drawable/nim_avatar_group" />
+
+            <TextView
+                android:id="@+id/game_tv9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/game_star9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/play_game_cv9"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_star" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="1dp"
+                android:text="10"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                    android:id="@+id/play_game_cv10"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="onHivClick"
+                    android:src="@drawable/nim_avatar_group" />
+
+                <ImageView
+                    android:id="@+id/iv_lock1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_icon_lock" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/game_tv10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="1dp"
+                android:text="11"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                    android:id="@+id/play_game_cv11"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="onHivClick"
+                    android:src="@drawable/nim_avatar_group" />
+
+                <ImageView
+                    android:id="@+id/iv_lock2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_icon_lock" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/game_tv11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/game_rl_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="1dp"
+                android:text="12"
+                android:textColor="#ff9800"
+                android:textSize="23dp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                    android:id="@+id/play_game_cv12"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="onHivClick"
+                    android:src="@drawable/nim_avatar_group" />
+
+                <ImageView
+                    android:id="@+id/iv_lock3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_icon_lock" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/game_tv12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="1"
+                android:textColor="@color/color_red_ccfa3c55"
+                android:textSize="20dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/play_game_ib_text"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:background="@color/colorWhite"
+            app:srcCompat="@drawable/ic_icon_speak" />
+
+        <Button
+            android:id="@+id/play_game_bt_speak"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="24dp"
+            android:visibility="gone"
+            android:textColor="@color/colorPrimaryBrighten"
+            android:background="@drawable/play_game_bt_speak"
+            android:text="@string/play_game_press_speak" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/play_game_ready"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/play_game_switch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="准备" />
+
+            <Button
+                android:id="@+id/play_game_start"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="开始"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/play_game_roomNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="TextView" />
+</FrameLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_blue_3a9efb">
+
+    <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+        android:id="@+id/settings_cv_icon"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/a" />
+
+    <com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon
+        android:id="@+id/settings_et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:hint="昵称,限10位汉字、字母或者数字"
+        android:textSize="18sp">
+
+        <requestFocus />
+    </com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon>
+
+    <RadioGroup
+        android:id="@+id/settings_gp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/settings_rb_nan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="男"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/settings_rb_nv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="女"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/settings_bt_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="保存"
+        android:textSize="18sp" />
+</LinearLayout>

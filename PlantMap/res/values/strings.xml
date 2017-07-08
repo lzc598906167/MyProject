@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">植物雷达</string>
+    <string name="search_hint">搜索植物名称、分布地点</string>
+    <string name="max_scale">已经放大到最大级别</string>
+    <string name="min_scale">已经缩小到最小级别</string>
+    <string name="search_name">搜植物名称</string>
+    <string name="search_place">搜分布地点</string>
+    <string name="waiting_hint">请稍候……</string>
+    <string name="search_history">搜索历史</string>
+    <string name="clean_history">清空搜索历史</string>
+    <string name="clear_history_hint">您确定要清空搜索历史吗？</string>
+    <string name="positive">确定</string>
+    <string name="negative">取消</string>
+    <string name="name_not_found">没有找到植物</string>
+    <string name="place_not_found">没有找到地点</string>
+    <string name="time_out">连接超时</string>
+    <string name="invalide_bar_code">无效的二维码</string>
+    <string name="service_error">服务器错误</string>
+    <string name="no_connection_warning_text">网络异常，请检查网络设置</string>
+    <string name="service_fail">服务器端未响应</string>
+    <string name="unkonwn_error">获取地点数据失败，未知错误</string>
+    <string name="qr_scan_title">扫一扫</string>
+    <string name="qr_scan_hint">将二维码放入框内，即可自动扫描</string>
+    <string name="setting_title">设置</string>
+    <string name="basic_settings">基本设置</string>
+    <string name="keep_screen_on">屏幕常亮</string>
+    <string name="keep_screen_on_hint">阻止设备在一定时间后自动关闭屏幕</string>
+    <string name="clean_cache">清空缓存</string>
+    <string name="clean_cache_hint">删除已缓存的数据内容及图片</string>
+    <string name="done_clean_cache">缓存清理完毕</string>
+    <string name="other_info">其他说明</string>
+    <string name="current_version_title">当前版本</string>
+    <string name="location_menu_title">切换地点</string>
+    <string name="switch_to">切换到</string>
+    <string name="detail_title">详细信息</string>
+    <string name="nearby">搜附近</string>
+    <string name="navigation">到这去</string>
+    <string name="navi_init_fail">百度导航引擎初始化失败</string>
+    <string name="calculate_route_error">算路失败</string>
+    <string name="aliaseName_title">别名</string>
+    <string name="distribution_title">分布</string>
+    <string name="exterion_title">外观</string>
+    <string name="flower_title">花</string>
+    <string name="branch_title">枝条</string>
+    <string name="leaf_title">叶片</string>
+    <string name="fruit_title">果实</string>
+    <string name="about">关于</string>
+    <string name="company_name">西北农林科技大学</string>
+    <string name="copyright">Copyright© MEIYOUBANQUAN</string>
+    <string name="exit_hint">再按一次返回键退出</string>
+
+</resources>

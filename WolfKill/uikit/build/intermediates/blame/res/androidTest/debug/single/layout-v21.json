@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\levon\\Desktop\\WolfKill\\uikit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\levon\\.android\\build-cache\\3b7ba1ea329cac0cd1dcdc683b9eaee8b78e59e0\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\levon\\Desktop\\WolfKill\\uikit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\levon\\.android\\build-cache\\3b7ba1ea329cac0cd1dcdc683b9eaee8b78e59e0\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\levon\\Desktop\\WolfKill\\uikit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\levon\\.android\\build-cache\\3b7ba1ea329cac0cd1dcdc683b9eaee8b78e59e0\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\levon\\Desktop\\WolfKill\\uikit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\levon\\.android\\build-cache\\3b7ba1ea329cac0cd1dcdc683b9eaee8b78e59e0\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    }
+]
