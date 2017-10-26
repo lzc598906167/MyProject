@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="gamerManager" namespace="/WolfKill/gamer" extends="json-default">
+        <action name="gamer_*" class="cn.edu.nwsuaf.liuzc.action.GamerAction" method="{1}">
+            <result name="add" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,wolf
+                </param>
+            </result>
+            <result name="change" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,wolf
+                </param>
+            </result>
+            <result name="exit" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="remove" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="start" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="ready" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="unready" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="unready" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="getWolf" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="wolfPicked" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="seerPeriod" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="witchPeriod" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="save" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="poison" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="leaveNight" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="next" type="json">
+                <param name="excludeProperties">
+                    roomName,username,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="vote" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+            <result name="countResult" type="json">
+                <param name="excludeProperties">
+                    roomName,userName,gamer,seatNumber,gamers,owner,wolf
+                </param>
+            </result>
+        </action>
+    </package>
+
+</struts>

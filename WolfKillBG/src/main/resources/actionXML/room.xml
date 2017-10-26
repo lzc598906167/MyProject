@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="roomManager" namespace="/WolfKill/room" extends="json-default">
+        <action name="room_*" class="cn.edu.nwsuaf.liuzc.action.RoomAction" method="{1}">
+            <result name="simple" type="json">
+                <param name="excludeProperties">
+                    room,type,peopleNumber,owner
+                </param>
+            </result>
+            <result name="hard" type="json">
+                <param name="excludeProperties">
+                    room,type,peopleNumber,owner
+                </param>
+            </result>
+            <result name="get_room" type="json">
+                <param name="excludeProperties">
+                    roomName,type,peopleNumber,owner
+                </param>
+            </result>
+            <result name="create" type="json">
+                <param name="excludeProperties">
+                    room,type,peopleNumber,owner
+                </param>
+            </result>
+            <result name="delete" type="json">
+                <param name="excludeProperties">
+                    roomName,room,type,peopleNumber,owner
+                </param>
+            </result>
+            <result name="people" type="json">
+                <param name="excludeProperties">
+                    roomName,room,type,owner
+                </param>
+            </result>
+        </action>
+    </package>
+</struts>

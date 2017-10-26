@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nwsuaf.liuzc.model.dao.GamerDao">
+    <select id="getAll" resultType="Gamer">
+        SELECT *
+        FROM gamer
+        WHERE room_name = #{roomName} ORDER BY seat_number
+    </select>
+    <select id="getOwner" resultType="String">
+        SELECT owner
+        FROM room
+        WHERE room_name = #{roomName}
+    </select>
+    <insert id="addGamer">
+        INSERT INTO gamer
+        (
+        room_name,
+        username,
+        seat_number,
+        state
+        )
+        VALUES
+        (
+        #{roomName},
+        #{userName},
+        #{seatNumber},
+        #{state}
+        )
+    </insert>
+    <update id="changeOwner">
+        UPDATE room
+        SET owner = #{1}
+        WHERE room_name = #{0}
+    </update>
+    <delete id="removeGamer">
+        DELETE FROM gamer WHERE username = #{userName}
+    </delete>
+    <update id="exitRoom">
+        UPDATE gamer
+        SET state = 5
+        WHERE room_name = #{0} AND username = #{1}
+    </update>
+    <select id="getSeatByUser" resultType="Integer">
+        SELECT seat_number
+        FROM gamer
+        WHERE username = #{userName}
+    </select>
+    <select id="getSeatNumber" resultType="Integer">
+        SELECT seat_number
+        FROM gamer
+        WHERE room_name = #{roomName} ORDER BY seat_number
+    </select>
+    <select id="getUserByRoomName" resultType="String">
+        SELECT username
+        FROM gamer
+        WHERE room_name = #{roomName} ORDER BY seat_number
+    </select>
+    <update id="setIdentity">
+        UPDATE gamer
+        SET
+        identity = #{1},
+        state = 1,
+        chance = #{2}
+        WHERE
+        username = #{0}
+    </update>
+    <update id="ready">
+        UPDATE gamer
+        SET state = 1
+        WHERE username = #{userName}
+    </update>
+    <select id="getReadyNum" resultType="Integer">
+        SELECT COUNT(*)
+        FROM gamer
+        WHERE room_name = #{roomName} AND state = 1
+    </select>
+    <update id="unready">
+        UPDATE gamer
+        SET state = 0
+        WHERE username = #{userName}
+    </update>
+    <select id="getWolf" resultType="Gamer">
+        SELECT *
+        FROM gamer
+        WHERE room_name = #{roomName} AND identity = 2
+    </select>
+    <update id="setCountByWolf">
+        UPDATE gamer
+        SET count = count + 1
+        WHERE room_name = #{0} AND seat_number = #{1}
+    </update>
+    <select id="getCount" resultType="Integer">
+        SELECT count
+        FROM gamer
+        WHERE room_name = #{roomName} ORDER BY seat_number
+    </select>
+    <update id="setDying">
+        UPDATE gamer
+        SET state = 2
+        WHERE room_name = #{0} AND seat_number = #{1}
+    </update>
+    <select id="getSeer" resultType="String">
+        SELECT username
+        FROM gamer
+        WHERE room_name = #{roomName} AND (state = 1 OR state = 2) AND identity = 3
+    </select>
+    <select id="getWitch" resultType="Gamer">
+        SELECT *
+        FROM gamer
+        WHERE room_name = #{roomName} AND (state = 1 OR state = 2) AND identity = 4
+    </select>
+    <select id="getDying" resultType="Integer">
+        SELECT seat_number
+        FROM gamer
+        WHERE room_name = #{roomName} AND state = 2
+    </select>
+    <update id="setState">
+        UPDATE gamer
+        SET state = #{2}
+        WHERE room_name = #{0} AND state = #{1}
+    </update>
+    <update id="setChance">
+        UPDATE gamer
+        SET chance = #{1}
+        WHERE room_name = #{0} AND identity = 4
+    </update>
+    <update id="poisonGamer">
+        UPDATE gamer
+        SET state = 3
+        WHERE room_name = #{0} AND seat_number = #{1}
+    </update>
+    <select id="deadSeat" resultType="Integer">
+        SELECT seat_number
+        FROM gamer
+        WHERE room_name = #{roomName} AND state = 3 ORDER BY seat_number
+    </select>
+    <select id="getAllDead" resultType="Integer">
+        SELECT identity
+        FROM gamer
+        WHERE room_name = #{roomName} AND (state = 4 OR state = 5)
+    </select>
+    <update id="clearCount">
+        UPDATE gamer
+        SET count = 0
+        WHERE room_name = #{roomName}
+    </update>
+    <update id="setSpeakChance">
+        UPDATE gamer
+        SET speak_chance = 1
+        WHERE room_name = #{0} AND seat_number = #{1}
+    </update>
+    <update id="clearChance">
+        UPDATE gamer
+        SET speak_chance = 0
+        WHERE room_name = #{roomName}
+    </update>
+    <select id="getSpeakSeat" resultType="Integer">
+        SELECT seat_number
+        FROM gamer
+        WHERE room_name = #{roomName} AND state = 1 AND speak_chance = 0
+    </select>
+    <update id="setOuter">
+        UPDATE gamer
+        SET state = 4
+        WHERE room_name = #{0} AND seat_number = #{1}
+    </update>
+</mapper>

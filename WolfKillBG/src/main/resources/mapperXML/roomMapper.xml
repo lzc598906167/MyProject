@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nwsuaf.liuzc.model.dao.RoomDao" >
+    <select id="findSimple" resultType="Integer">
+        SELECT room_name
+        FROM room
+        <![CDATA[ WHERE TYPE=1 AND people_number<9 LIMIT 1]]>
+    </select>
+    <select id="findHard" resultType="Integer">
+        SELECT room_name
+        FROM room
+        <![CDATA[ WHERE TYPE=2 AND people_number<9 LIMIT 1]]>
+    </select>
+    <select id="get" resultType="Room">
+        SELECT * FROM room WHERE room_name = #{roomName}
+    </select>
+    <insert id="insert" >
+        INSERT INTO room
+        (
+        room_name,
+        TYPE ,
+        people_number,
+        OWNER
+        )
+        VALUES
+        (
+        #{0},
+        #{1},
+        #{2},
+        #{3}
+        )
+    </insert>
+    <delete id="delete">
+        delete from room where room_name = #{roomName}
+    </delete>
+    <select id="getRoomName" resultType="Integer">
+        SELECT room_name
+        FROM room
+        ORDER BY room_name
+    </select>
+    <select id="getPeopleNumber" resultType="Integer">
+        SELECT people_number
+        FROM room
+        WHERE room_name = #{roomName}
+    </select>
+</mapper>
