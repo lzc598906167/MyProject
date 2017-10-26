@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="plantdistriManager"  namespace="/plantdistri" extends="base">
+        <interceptors>
+            <interceptor name="loginCheck" class="interceptor.MyInterceptor"/>
+        </interceptors>
+        <action name="plantdistri_*" class="action.PlantDistrictAction" method="{1}">
+            <result name="list">/WEB-INF/views/manager/plantdistri_list.jsp</result>
+            <result name="edit">/WEB-INF/views/manager/plantdistri_edit.jsp</result>
+            <result name="save" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select?activeNo=2</param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">welcome</param>
+            </result>
+            <result name="plants" type="json">
+                <param name="excludeProperties">
+                    plant,images,lat,log,coordinateList,plantdistris,plantdistri,plantsByDis
+                </param>
+            </result>
+
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="loginCheck">
+                <param name="excludeMethods">getPlantsByDis</param>
+            </interceptor-ref>
+        </action>
+    </package>
+</struts>

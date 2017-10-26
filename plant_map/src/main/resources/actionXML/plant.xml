@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="plantManager"  namespace="/plant" extends="json-default">
+
+        <interceptors>
+            <interceptor name="loginCheck" class="interceptor.MyInterceptor"/>
+        </interceptors>
+
+        <action name="plant_*" class="action.PlantAction" method="{1}">
+            <result name="list">/WEB-INF/views/manager/plant_list.jsp</result>
+            <result name="edit">/WEB-INF/views/manager/plant_edit.jsp</result>
+            <result name="save" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select?activeNo=1</param>
+            </result>
+            <result name="inquiry" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select?activeNo=1&amp;plantname=${plantname}</param>
+            </result>
+            <result name="plantname" type="json">
+                <param name="excludeProperties">
+                    fuzzyPlants,plantname,sectionname,campusname,coordinates,
+                    images,plant,plants,plantByName,plantsByFuzzyName,plantsByThreeName
+                </param>
+            </result>
+            <result name="FuzzySections" type="json">
+                <param name="excludeProperties">
+                    sendPlants,plantname,sectionname,campusname,coordinates,
+                    images,plant,plants,plantByName,plantsByFuzzyName,plantsByThreeName
+                </param>
+            </result>
+            <result name="ThreePlantName" type="json">
+                <param name="excludeProperties">
+                    fuzzyPlants,plantname,sectionname,campusname,coordinates,
+                    images,plant,plants,plantByName,plantsByFuzzyName,plantsByThreeName
+                </param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">welcome</param>
+            </result>
+
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="loginCheck">
+                <param name="excludeMethods">
+                    getPlantByName,getPlantsByFuzzyName,getPlantsByThreeName
+                </param>
+            </interceptor-ref>
+
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="model.dao.PlantDao">
+    <select id="get" resultType="Plant">
+        select * FROM  plant WHERE id = #{id}
+    </select>
+
+    <select id="find" resultType="Plant">
+        SELECT * FROM plant WHERE plant.name LIKE CONCAT(CONCAT('%',#{1},'%'))
+    </select>
+
+    <insert id="insert">
+        insert into plant
+        (
+        name,
+        lat_name,
+        aliase_name,
+        family_name,
+        genus_name,
+        distribution,
+        exterion,
+        flower,
+        branch,
+        leaf,
+        fruit
+        )
+        VALUES
+        (
+        #{name},
+        #{latName},
+        #{aliaseName},
+        #{familyName},
+        #{genusName},
+        #{distribution},
+        #{exterion},
+        #{flower},
+        #{branch},
+        #{leaf},
+        #{fruit}
+        )
+    </insert>
+    <update id="update">
+        UPDATE plant
+        SET
+        name = #{name},
+        lat_name = #{latName},
+        aliase_name = #{aliaseName},
+        family_name = #{familyName},
+        genus_name = #{genusName},
+        distribution = #{distribution},
+        exterion = #{exterion},
+        flower = #{flower},
+        branch = #{branch},
+        leaf = #{leaf},
+        fruit = #{fruit}
+        where
+        id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from plant where id = #{id}
+    </delete>
+
+    <!--按植物名获取植物基本信息-->
+    <select id="getPlant" resultType="Plant">
+        SELECT * from plant WHERE name = #{plantName}
+    </select>
+
+    <!--按植物名获取植物坐标-->
+    <select id="getPlantDistrict" resultType="Coordinate">
+      SELECT lat,log
+      FROM plant_distrib,plant
+      WHERE plant.name=#{plantName} AND plant.id=plant_distrib.plant_id
+    </select>
+
+    <!--按植物名获取植物图片-->
+    <select id="getImg" resultType="Images">
+        SELECT TYPE,urladdress
+        FROM plant_images,plant
+        WHERE plant.name=#{plantName} AND plant.id=plant_images.plant_id
+    </select>
+
+    <!--按模糊的植物名查询植物列表-->
+    <select id="getFuzzyPlants" resultType="FuzzyPlant">
+        SELECT  DISTINCT a.name AS plantName,c.name AS sectionName,d.name AS campusName
+        FROM plant a,plant_distrib b,section c,compus d
+        WHERE d.id = c.compus_id AND c.id = b.section_id AND b.plant_id = a.id AND a.name LIKE CONCAT(CONCAT('%',#{plantName},'%'))
+    </select>
+    
+    <!--按校区名，区域名，植物名查询植物坐标-->
+    <select id="getSectionPlantDis" resultType="Coordinate">
+        SELECT b.lat,b.log
+        FROM plant a,plant_distrib b,section c,compus d
+        WHERE d.id = c.compus_id AND c.id = b.section_id AND b.plant_id = a.id
+        AND  d.name = #{0} AND c.name = #{1} AND a.name = #{2}
+    </select>
+</mapper>

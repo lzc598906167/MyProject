@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ <mapper namespace="model.dao.CampusDao">
+    <select id="get" resultType="Campus">
+        select * FROM  campus WHERE id = #{id}
+    </select>
+    <select id="find" resultType="Campus">
+        SELECT  * from campus
+    </select>
+    <select id="sendList" resultType="Campus">
+        SELECT  * from campus
+    </select>
+    <insert id="insert">
+        insert into campus
+        (
+        name,
+        lat,
+        log
+        )
+        VALUES
+        (
+        #{name},
+        #{lat},
+        #{log}
+        )
+    </insert>
+    <update id="update">
+        UPDATE campus
+        SET
+        name = #{name},
+        lat = #{lat},
+        log = #{log}
+        where
+        id = #{id}
+    </update>
+    <delete id="delete">
+        delete from campus where id = #{id}
+    </delete>
+</mapper>

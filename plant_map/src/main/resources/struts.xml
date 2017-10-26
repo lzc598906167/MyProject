@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+        <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+        <constant name="struts.devMode" value="true" />
+        <constant name="struts.ui.theme" value="simple"/>
+        <package name="base"  namespace="/" extends="json-default">
+
+                <interceptors>
+                        <interceptor name="loginCheck" class="interceptor.MyInterceptor"/>
+                </interceptors>
+
+                <action name="welcome">
+                        <result>/WEB-INF/views/manager/login.jsp</result>
+                </action>
+                <action name="select">
+                        <result>/WEB-INF/views/manager/manager.jsp</result>
+                        <result name="input" type="redirectAction">
+                                <param name="namespace">/</param>
+                                <param name="actionName">welcome</param>
+                        </result>
+                        <interceptor-ref name="defaultStack"/>
+                        <interceptor-ref name="loginCheck"/>
+                </action>
+        </package>
+        <include file="actionXML/section.xml" />
+        <include file="actionXML/plant.xml" />
+        <include file="actionXML/campus.xml" />
+        <include file="actionXML/plantDistrict.xml"/>
+        <include file="actionXML/user.xml"/>
+        <include file="actionXML/image.xml"/>
+</struts>

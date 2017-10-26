@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="sectionManager"  namespace="/section" extends="json-default">
+
+        <interceptors>
+            <interceptor name="loginCheck" class="interceptor.MyInterceptor"/>
+        </interceptors>
+
+        <action name="section_*" class="action.SectionAction" method="{1}">
+            <result name="list">/WEB-INF/views/manager/section_list.jsp</result>
+            <result name="edit">/WEB-INF/views/manager/section_edit.jsp</result>
+            <result name="save" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select?activeNo=4</param>
+            </result>
+            <result name="sectionname" type="json">
+                <param name="excludeProperties">
+                    sendSections,section,sections,sectionname,campusname,
+                    plants,plantBySectionName,sectionsByFuzzyName
+                </param>
+            </result>
+            <result name="FuzzySections" type="json">
+                <param name="excludeProperties">
+                    sendPlants,sectionCoordinate,section,sections,sectionname,campusname,
+                    plants,plantBySectionName,sectionsByFuzzyName
+                </param>
+            </result>
+            <result name="input" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">welcome</param>
+            </result>
+
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="loginCheck">
+                <param name="excludeMethods">getPlantBySectionName,getSectionsByFuzzyName</param>
+            </interceptor-ref>
+        </action>
+    </package>
+</struts>

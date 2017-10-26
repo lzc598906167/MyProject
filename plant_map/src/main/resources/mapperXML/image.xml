@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="model.dao.ImageDao">
+    <select id="get" resultType="Image">
+        select * FROM  plant_images WHERE id = #{id}
+    </select>
+
+    <select id="find" resultType="Image">
+        SELECT s.id,s.plant_id,c.name,s.type,s.urladdress
+        FROM plant_images s,plant c
+        WHERE c.id = s.plant_id
+    </select>
+
+    <insert id="insert">
+        insert into plant_images
+        (
+        plant_id,
+        type,
+        urladdress
+        )
+        VALUES
+        (
+        #{plantId},
+        #{type},
+        #{urlAddress}
+        )
+    </insert>
+    <update id="update">
+        UPDATE plant_images
+        SET
+        plant_id = #{plantId},
+        type = #{type},
+        urladdress = #{urlAddress}
+        where
+        id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from plant_images where id = #{id}
+    </delete>
+
+</mapper>

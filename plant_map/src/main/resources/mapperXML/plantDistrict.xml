@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="model.dao.PlantDistrictDao">
+    <select id="get" resultType="PlantDistrict">
+        select * FROM  plant_distrib WHERE id = #{id}
+    </select>
+
+    <select id="find" resultType="PlantDistrict">
+        SELECT  * from plant_distrib
+    </select>
+
+    <insert id="insert">
+        insert into plant_distrib
+        (
+        plant_id,
+        section_id,
+        lat,
+        log
+        )
+        VALUES
+        (
+        #{plantId},
+        #{sectionId},
+        #{lat},
+        #{log}
+        )
+    </insert>
+    <update id="update">
+        UPDATE plant_distrib
+        SET
+        plant_id = #{plantId},
+        section_id = #{sectionId},
+        lat = #{lat},
+        log = #{log}
+        where
+        id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from plant_distrib where id = #{id}
+    </delete>
+
+    <!--通过坐标获取植物信息-->
+    <select id="getPlant" resultType="Plant">
+        SELECT a.*
+        FROM plant a,plant_distrib b
+        WHERE a.id = b.plant_id AND b.lat = #{0} AND b.log = #{1}
+    </select>
+
+    <!--通过坐标获取植物图片-->
+    <select id="getImgs" resultType="Images">
+        SELECT a.type,urladdress
+        FROM plant_images a,plant_distrib b
+        WHERE a.plant_id = b.plant_id AND b.lat = #{0} AND b.log = #{1}
+    </select>
+
+
+</mapper>

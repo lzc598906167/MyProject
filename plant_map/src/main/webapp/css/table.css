@@ -1,0 +1,6 @@
+.table th, .table td {
+	text-align: center; 
+	height:38px;
+	font-family: "微软雅黑", "宋体";
+	font-size: 14px;
+}

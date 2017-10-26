@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="userManager"  namespace="/user" extends="base">
+        <action name="user_*" class="action.UserAction" method="{1}">
+            <result name="success" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select</param>
+            </result>
+            <result name="quit" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">welcome</param>
+            </result>
+            <result name="input">/WEB-INF/views/manager/login.jsp</result>
+            <result name="edit">/WEB-INF/views/manager/user_edit.jsp</result>
+            <result name="adduser" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">welcome</param>
+            </result>
+            <result name="registUsers">/WEB-INF/views/manager/user_regist.jsp</result>
+            <result name="updateuser" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">select?activeNo=5</param>
+            </result>
+        </action>
+
+    </package>
+</struts>
